@@ -1,3 +1,10 @@
 *.env
 .DS_Store
 __pycache__/
+
+# Ignore compiled frontend files
+frontend/static/dist/*
+
+# Ignore staticfiles created by Django's collectstatic
+staticfiles/
+
