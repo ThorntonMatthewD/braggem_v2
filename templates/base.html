@@ -33,9 +33,11 @@
   <div id="root"></div>
 
   {% if debug %}
+  <h1>Debugging activated</h1>
   <!-- This url will be different for each type of app. Point it to your main js file. -->
   <script type="module" src="http://localhost:5173/src/main.tsx"></script>
   {% else %}
+  <h1>Not debugging</h1>
   {% render_vite_bundle %}
   {% endif %}
 </body>
