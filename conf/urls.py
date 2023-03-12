@@ -20,7 +20,6 @@ from django.conf.urls.static import static
 from django.views.static import serve
 from django.views.generic import TemplateView
 
-print(settings.TEMPLATES)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
