@@ -3,15 +3,14 @@ import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
-  base: "/",
+  plugins: [
+    react(),
+  ],
+  base: process.env.mode === "production" ? "/static/" : "/",
   build: {
-    outDir: "/frontend/static/",
+    outDir: "./dist",
+    emptyOutDir: true,
     manifest: true,
-    rollupOptions: {
-      input: {
-        key: "static/",
-      },
-    },
+    modulePreload: true,
   },
 });

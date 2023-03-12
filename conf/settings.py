@@ -29,6 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     "127.0.0.1",
+    "localhost"
 ]
 
 
@@ -75,7 +76,9 @@ ROOT_URLCONF = "conf.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [
+            os.path.join(BASE_DIR, 'templates/')
+        ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -84,6 +87,9 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
             ],
+            "libraries": {
+                "render_vite_bundle": "templatetags.render_vite_bundle"
+            }
         },
     },
 ]
@@ -178,7 +184,7 @@ AUTH_USER_MODEL = "accounts.User"
 # https://docs.djangoproject.com/en/3.1/ref/settings/#staticfiles-dirs
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 mimetypes.add_type("text/html", ".css", True)
 WHITENOISE_MIMETYPES = {".xsl": "application/xml"}
@@ -196,10 +202,24 @@ MEDIA_URL = "/media/"
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
+# Vite App Dir: point it to the folder your vite app is in.
+VITE_APP_DIR = BASE_DIR / "frontend/static"
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/3.1/howto/static-files/
+
+# You may change these, but it's important that the dist folder is includedself.
+# If it's not, collectstatic won't copy your bundle to production.
+
+STATIC_URL = "/static/"
+STATICFILES_DIRS = [
+    VITE_APP_DIR / "dist",
+]
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
 # Static file directories
 # https://docs.djangoproject.com/en/4.1/ref/settings/#staticfiles-dirs
 
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "frontend/static/"),)
 REACT_APP_DIR = os.path.join(BASE_DIR, "frontend/static/")
 
 REST_AUTH_SERIALIZERS = {

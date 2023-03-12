@@ -43,7 +43,7 @@ export const ProtectedLayout = () => {
       throw new Error("Oops! Something went wrong");
     } else {
       const data = await response.json();
-      Cookies.remove("Authorization", `Token${" "}${data.key}`);
+      Cookies.remove("Authorization", Cookies.attributes);
       Toast.fire({
         icon: "warning",
         title: "You are now logged out.",
