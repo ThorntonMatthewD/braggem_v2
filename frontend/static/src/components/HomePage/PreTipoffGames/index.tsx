@@ -58,11 +58,10 @@ const PreTipoffGames = ({
           disabled={localStorage.getItem(game.gameId) ? true : false}
         >
           <ImageContainer>
-            <TeamLogoImage>
-              <Image
-                imageKey={game.awayTeam.teamTricode}
-              />
-            </TeamLogoImage>
+            <Image
+              imageKey={game.awayTeam.teamTricode}
+              style={{width: "100%"}}
+            />
           </ImageContainer>
           <GameDetailsContainer>
             <TeamCity>
@@ -88,11 +87,10 @@ const PreTipoffGames = ({
           disabled={localStorage.getItem(game.gameId) ? true : false}
         >
           <ImageContainer>
-            <TeamLogoImage>
-              <Image
-                imageKey={game.homeTeam.teamTricode}
-              />
-            </TeamLogoImage>
+            <Image
+              imageKey={game.homeTeam.teamTricode}
+              style={{width: "100%"}}
+            />
           </ImageContainer>
           <GameDetailsContainer>
             <TeamCity>

@@ -144,12 +144,11 @@ const HeadToHead = () => {
                     {challenge.games >= 1 && (
                       <LogoAndGamesContainer>
                         <ImageContainer>
-                          <NBALogo>
-                            <Image
-                              imageKey="NBA"
-                              altText="NBA Logo"
-                            />
-                          </NBALogo>
+                          <Image
+                            imageKey="NBA"
+                            altText="NBA Logo"
+                            style={{width: "100%"}}
+                          />
                         </ImageContainer>
                         {challenge.games} Games
                       </LogoAndGamesContainer>

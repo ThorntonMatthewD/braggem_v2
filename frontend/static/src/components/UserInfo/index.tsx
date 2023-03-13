@@ -137,11 +137,10 @@ const UserInfo = () => {
           background={`${favoriteTeam(userData?.favorite_team)}`}
         >
           <ImageContainer>
-            <TeamImage>
-              <Image
-                imageKey={userData?.favorite_team}
-              />
-            </TeamImage>
+            <Image
+              imageKey={userData?.favorite_team}
+              style={{width: "100%"}}
+            />
           </ImageContainer>
         </LandscapeContainer>
         <AvatarSection>

@@ -74,11 +74,10 @@ const AfterHoursGames = ({
           background={activeTeam(game.awayTeam.teamTricode)}
         >
           <ImageContainer>
-            <TeamLogoImage>
-              <Image
-                imageKey={game.awayTeam.teamTricode}
-              />
-            </TeamLogoImage>
+            <Image
+              imageKey={game.awayTeam.teamTricode}
+              style={{width: "100%"}}
+            />
           </ImageContainer>
           <GameDetailsContainer>
             <TeamCity>
@@ -99,11 +98,10 @@ const AfterHoursGames = ({
           background={activeTeam(game.homeTeam.teamTricode)}
         >
           <ImageContainer>
-            <TeamLogoImage>
-              <Image
-                imageKey={game.homeTeam.teamTricode}
-              />
-            </TeamLogoImage>
+            <Image
+              imageKey={game.homeTeam.teamTricode}
+              style={{width: "100%"}}
+            />
           </ImageContainer>
           <GameDetailsContainer>
             <TeamCity>
