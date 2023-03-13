@@ -218,7 +218,6 @@ STATIC_URL = "/static/"
 STATICFILES_DIRS = [
     VITE_APP_DIR / "dist",
 ]
-STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Static file directories
 # https://docs.djangoproject.com/en/4.1/ref/settings/#staticfiles-dirs
