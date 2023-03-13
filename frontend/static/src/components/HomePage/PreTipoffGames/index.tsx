@@ -17,6 +17,7 @@ import {
   TeamLogoImage,
   WinLoss,
 } from "./style";
+import Image from "../../Base/Image";
 
 const PreTipoffGames = ({
   todaysGames,
@@ -57,10 +58,11 @@ const PreTipoffGames = ({
           disabled={localStorage.getItem(game.gameId) ? true : false}
         >
           <ImageContainer>
-            <TeamLogoImage
-              src={require(`../../media/${game.awayTeam.teamTricode}.png`)}
-              alt=""
-            />
+            <TeamLogoImage>
+              <Image
+                imageKey={game.awayTeam.teamTricode}
+              />
+            </TeamLogoImage>
           </ImageContainer>
           <GameDetailsContainer>
             <TeamCity>
@@ -86,10 +88,11 @@ const PreTipoffGames = ({
           disabled={localStorage.getItem(game.gameId) ? true : false}
         >
           <ImageContainer>
-            <TeamLogoImage
-              src={require(`../../media/${game.homeTeam.teamTricode}.png`)}
-              alt=""
-            />
+            <TeamLogoImage>
+              <Image
+                imageKey={game.homeTeam.teamTricode}
+              />
+            </TeamLogoImage>
           </ImageContainer>
           <GameDetailsContainer>
             <TeamCity>

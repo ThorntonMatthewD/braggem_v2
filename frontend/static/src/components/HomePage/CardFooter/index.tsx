@@ -11,6 +11,7 @@ import { AiFillLock } from "react-icons/ai";
 import { IoIosArrowForward } from "react-icons/io";
 import { OptionsProps } from "../../../types";
 import { FooterProps } from "../types";
+import Image from "../../Base/Image";
 
 const CardFooter = ({
   todaysGames,
@@ -109,19 +110,17 @@ const CardFooter = ({
                     onClick={() => handleShow(pick)}
                   >
                     <div className="footerimgdivtowin mobilefooterimgwin">
-                      <img
-                        style={{ width: "100%" }}
-                        src={require(`../../media/${pick.user_pick}.png`)}
-                        alt=""
+                      <Image
+                        imageKey={pick.user_pick}
+                        style={{width: "100%"}}
                       />
                     </div>
 
                     <div className="footerimgdivtolose mobilefooterimglose">
                       {timeUntilEstGameInMS > 0 ? (
-                        <img
-                          style={{ width: "100%" }}
-                          src={require(`../../media/${pick.opponent}.png`)}
-                          alt=""
+                        <Image
+                          imageKey={pick.opponent}
+                          style={{width: "100%"}}
                         />
                       ) : null}
                     </div>

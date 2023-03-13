@@ -19,8 +19,7 @@ const Header = () => {
         {!!user && (
           <CourtLogoContainer>
             <Image
-              fileName={`${user?.favorite_team}.png`}
-              altText=""
+              imageKey={user?.favorite_team}
             />
           </CourtLogoContainer>
         )}

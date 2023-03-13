@@ -31,6 +31,7 @@ import { favoriteTeam } from "./utils";
 import { MdOutlinePersonAddAlt } from "react-icons/md";
 import { IoIosArrowBack } from "react-icons/io";
 import { OptionsProps } from "../../types";
+import Image from "../Base/Image";
 
 const UserInfo = () => {
   const { user }: any = useAuth();
@@ -136,10 +137,11 @@ const UserInfo = () => {
           background={`${favoriteTeam(userData?.favorite_team)}`}
         >
           <ImageContainer>
-            <TeamImage
-              src={require(`../../media/${userData?.favorite_team}.png`)}
-              alt=""
-            />
+            <TeamImage>
+              <Image
+                imageKey={userData?.favorite_team}
+              />
+            </TeamImage>
           </ImageContainer>
         </LandscapeContainer>
         <AvatarSection>
