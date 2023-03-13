@@ -1,3 +1,6 @@
+// Credit to the following post for this idea:
+// https://stackoverflow.com/a/74192112
+
 // Miscellaneous
 export { default as basketball }  from './basketball.png';
 export {default as background } from './undefined.png';
