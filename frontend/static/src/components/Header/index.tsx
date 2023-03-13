@@ -6,9 +6,11 @@ import {
   CurveHead,
   HeaderTitle,
 } from "./style";
+import Image from "../Base/Image";
 
 const Header = () => {
   const { user }: any = useAuth();
+
   return (
     <Container>
       <CurveHead>
@@ -16,9 +18,9 @@ const Header = () => {
         <HeaderTitle>Braggem</HeaderTitle>
         {!!user && (
           <CourtLogoContainer>
-            <img
-              src={require(`../../media/${user?.favorite_team}.png`)}
-              alt=""
+            <Image
+              fileName={`${user?.favorite_team}.png`}
+              altText=""
             />
           </CourtLogoContainer>
         )}

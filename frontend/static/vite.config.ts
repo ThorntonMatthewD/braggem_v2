@@ -11,7 +11,7 @@ export default defineConfig({
   plugins: [
     react(),
     viteCommonjs(),
-    requireTransform({})
+    //requireTransform({})
   ],
   base: process.env.mode === "production" ? "/static/" : "/",
   build: {
