@@ -19,7 +19,7 @@ const Header = () => {
             <img
               src={require(`../../media/${user?.favorite_team}.png`)}
               alt=""
-            ></img>
+            />
           </CourtLogoContainer>
         )}
       </CurveHead>
