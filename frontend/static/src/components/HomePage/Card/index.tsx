@@ -46,7 +46,7 @@ const Card = () => {
   }, [userPick]);
 
   const getTodaysPicks = async () => {
-    const response: any = await fetch(`/api_v1/picks/current/${user.id}`).catch(
+    const response: any = await fetch(`http://localhost:8000/api_v1/picks/current/${user.id}/`).catch(
       handleError
     );
     if (!response.ok) {
